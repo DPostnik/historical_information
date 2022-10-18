@@ -6,7 +6,7 @@ import ContentLayout from './content-layout';
 type LayoutProps = {
   children: React.ReactNode;
 };
-const Layout = ({ children }: LayoutProps) => {
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <div className="layout__wrapper">
@@ -28,6 +28,4 @@ const Layout = ({ children }: LayoutProps) => {
       `}</style>
     </>
   );
-};
-
-export default Layout;
+}
