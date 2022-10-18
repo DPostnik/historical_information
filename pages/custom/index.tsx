@@ -11,7 +11,6 @@ export default function CustomPage() {
       <style jsx>{`
         .page__wrapper {
           width: 100%;
-          padding: 3rem 2rem;
         }
       `}</style>
     </>

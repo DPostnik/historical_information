@@ -6,13 +6,15 @@ import { Theme } from 'enums/Theme';
 
 type SwitcherProps = {
   theme?: Theme;
+  handleSwitchTheme: (value: Theme) => void;
 };
 
-export default function Switcher({ theme = Theme.Light }: SwitcherProps) {
-  const [activeTheme, setActiveTheme] = useState(theme === Theme.Light);
+export default function Switcher({ theme, handleSwitchTheme }: SwitcherProps) {
+  const [activeTheme, setActiveTheme] = useState(theme === Theme.LIGHT);
 
   const onHandleClick = () => {
     setActiveTheme((prev) => !prev);
+    handleSwitchTheme(activeTheme ? Theme.DARK : Theme.LIGHT);
   };
 
   return (

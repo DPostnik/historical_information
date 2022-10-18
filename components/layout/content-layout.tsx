@@ -11,7 +11,8 @@ export default function ContentLayout({ children }: ContentLayoutProps) {
       <style jsx>{`
         .content {
           &__wrapper {
-            min-height: 80vh;
+            padding: 3rem;
+            min-height: 90vh;
             width: 100%;
             border: 1px solid black;
             background: linear-gradient(#e66465, #9198e5);
