@@ -1,14 +1,27 @@
 import React from 'react';
+import { useApp } from 'common/store/app.context';
+import { getTheme } from 'common/store/selectors';
+import { Theme } from 'enums/Theme';
 
 type ContentLayoutProps = {
   children?: React.ReactNode;
 };
 
 export default function ContentLayout({ children }: ContentLayoutProps) {
+  const theme = useApp(getTheme);
+
   return (
     <>
-      <div className="content__wrapper">{children}</div>
+      <div
+        className={`content__wrapper ${
+          theme === Theme.LIGHT ? 'light' : 'dark'
+        }`}
+      >
+        {children}
+      </div>
       <style jsx>{`
+        @import 'styles/utils/_all.scss';
+
         .content {
           &__wrapper {
             padding: 3rem;

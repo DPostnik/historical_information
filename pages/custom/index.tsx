@@ -9,8 +9,11 @@ export default function CustomPage() {
         <div>{t('h1')}</div>
       </div>
       <style jsx>{`
+        @import 'styles/utils/_all.scss';
+
         .page__wrapper {
           width: 100%;
+          color: $primary-color;
         }
       `}</style>
     </>

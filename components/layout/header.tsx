@@ -1,26 +1,12 @@
-import Switcher from 'components/switcher/switcher';
-import { useApp } from 'common/store/app.context';
-import { getTheme } from 'common/store/selectors';
-import { Theme } from '../../enums/Theme';
-import { useCallback } from 'react';
+import ThemeSwitcher from 'components/switcher/theme-switcher';
 
 export default function Header() {
-  const { dispatch } = useApp();
-  const theme = useApp(getTheme);
-
-  const handleSwitchTheme = useCallback(
-    (value: Theme) => {
-      dispatch({ type: 'setTheme', payload: value });
-    },
-    [dispatch]
-  );
-
   return (
     <>
       <div className="header__wrapper">
         <h1>logo</h1>
         <div>
-          <Switcher theme={theme} handleSwitchTheme={handleSwitchTheme}/>
+          <ThemeSwitcher />
         </div>
       </div>
       <style jsx>{`

@@ -1,44 +1,34 @@
 import classNames from 'classnames';
-import { useState } from 'react';
-import Image from 'next/image';
-
-import { Theme } from 'enums/Theme';
+import { ReactNode } from 'react';
 
 type SwitcherProps = {
-  theme?: Theme;
-  handleSwitchTheme: (value: Theme) => void;
+  value: boolean;
+  handleSwitch: () => void;
+  children?: ReactNode;
 };
 
-export default function Switcher({ theme, handleSwitchTheme }: SwitcherProps) {
-  const [activeTheme, setActiveTheme] = useState(theme === Theme.LIGHT);
-
-  const onHandleClick = () => {
-    setActiveTheme((prev) => !prev);
-    handleSwitchTheme(activeTheme ? Theme.DARK : Theme.LIGHT);
-  };
-
+export default function Switcher({
+  value,
+  handleSwitch,
+  children,
+}: SwitcherProps) {
   return (
     <>
       <div className="switcher__wrapper">
         <button
           className={classNames({
             switcher__button: true,
-            'switcher__button-active': activeTheme,
+            'switcher__button-active': value,
           })}
-          onClick={onHandleClick}
+          onClick={handleSwitch}
         >
           <div
             className={classNames({
               switcher__control: true,
-              'switcher__control-active': activeTheme,
+              'switcher__control-active': value,
             })}
           >
-            <Image
-              src={activeTheme ? '/icons/sun.svg' : '/icons/moon.svg'}
-              width={30}
-              height={30}
-              alt="sun"
-            />
+            {children}
           </div>
         </button>
       </div>

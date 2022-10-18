@@ -6,3 +6,41 @@ $main-orange: #ffd340;
 $main-red: #ff4040;
 $cornflower-blue: #808eff;
 $white: #fff;
+
+$background: #f6f4d2;
+$primary: #d4e09b;
+$secondary: #a44a3f;
+$text: #f19c79;
+$border: #cbdfbd;
+
+$primary-color: var(--primary-color);
+
+.light {
+  --primary-color: #d4e09b;
+}
+
+.dark {
+  --primary-color: #55828b;
+  $background: #364958;
+  $primary: #55828b;
+  $secondary: #c9e4ca;
+  $text: #87bba2;
+  $border: #3b6064;
+}
+
+$palette: (
+  light: (
+    background: #f6f4d2,
+    primary: #d4e09b,
+    secondary: #a44a3f,
+    text: #f19c79,
+    border: #cbdfbd,
+  ),
+  dark: (
+    background: #364958,
+    primary: #55828b,
+    secondary: #c9e4ca,
+    text: #87bba2,
+    border: #3b6064,
+  ),
+);
