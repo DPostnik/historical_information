@@ -1,14 +1,13 @@
 import Image from 'next/image';
 import { useCallback } from 'react';
 
-import { useApp } from 'common/store/app.context';
-import { getTheme } from 'common/store/selectors';
+import { useApp, selectors } from 'common/store/app.context';
 import { Theme } from 'enums/Theme';
 import Switcher from './switcher';
 
 export default function ThemeSwitcher() {
   const { dispatch } = useApp();
-  const theme = useApp(getTheme);
+  const theme = useApp(selectors.getTheme);
 
   const isLight = theme === Theme.LIGHT;
 

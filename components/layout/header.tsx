@@ -1,10 +1,17 @@
+import { useRouter } from 'next/router';
 import ThemeSwitcher from 'components/switcher/theme-switcher';
+import HeaderContent from './header/headerContent';
+import { selectors, useApp } from 'common/store/app.context';
 
 export default function Header() {
+  const links = useApp(selectors.getHeaderLinks);
+  const { pathname } = useRouter();
+
   return (
     <>
       <div className="header__wrapper">
         <h1>logo</h1>
+        <HeaderContent pathname={pathname} links={links} />
         <div>
           <ThemeSwitcher />
         </div>

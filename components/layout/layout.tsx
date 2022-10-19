@@ -1,16 +1,16 @@
 import React from 'react';
+
+import { useApp, selectors } from 'common/store/app.context';
+import { Theme } from 'enums/Theme';
+import ContentLayout from './content-layout';
 import Header from './header';
 import Footer from './footer';
-import ContentLayout from './content-layout';
-import { useApp } from 'common/store/app.context';
-import { getTheme } from 'common/store/selectors';
-import { Theme } from 'enums/Theme';
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 export default function Layout({ children }: LayoutProps) {
-  const theme = useApp(getTheme);
+  const theme = useApp(selectors.getTheme);
 
   return (
     <>
