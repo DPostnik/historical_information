@@ -16,17 +16,13 @@ export default function Header() {
           &__wrapper {
             width: 100%;
             height: 5vh;
-            border: 1px solid black;
+            border: 1px solid $border-color;
             border-bottom: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 3rem;
-            background: linear-gradient(90deg, #9df794 0%, #f794e4 100%);
-
-            @include md {
-              border: 1px solid red;
-            }
+            color: $text-color;
           }
         }
       `}</style>

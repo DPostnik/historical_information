@@ -7,25 +7,26 @@ $main-red: #ff4040;
 $cornflower-blue: #808eff;
 $white: #fff;
 
-$background: #f6f4d2;
-$primary: #d4e09b;
-$secondary: #a44a3f;
-$text: #f19c79;
-$border: #cbdfbd;
-
 $primary-color: var(--primary-color);
+$background-color: var(--background-color);
+$text-color: var(--text-color);
+$border-color: var(--border-color);
+$secondary-color: var(--secondary-color);
 
 .light {
-  --primary-color: #d4e09b;
+  --primary-color: #2EC0F9;
+  --background-color: #C4E0F9;
+  --secondary-color: #B95F89;
+  --text-color: #67AAF9;
+  --border-color: #9BBDF9;
 }
 
 .dark {
   --primary-color: #55828b;
-  $background: #364958;
-  $primary: #55828b;
-  $secondary: #c9e4ca;
-  $text: #87bba2;
-  $border: #3b6064;
+  --background-color: #364958;
+  --secondary-color: #c9e4ca;
+  --text-color: #87bba2;
+  --border-color: #3b6064;
 }
 
 $palette: (
