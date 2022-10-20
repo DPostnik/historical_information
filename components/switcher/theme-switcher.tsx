@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useCallback } from 'react';
 
 import { useApp, selectors } from 'common/store/app.context';
-import { Theme } from 'enums/Theme';
+import { Theme } from 'enums/theme';
 import Switcher from './switcher';
 
 export default function ThemeSwitcher() {

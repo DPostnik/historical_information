@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
 
-import { Theme } from 'enums/Theme';
+import { Theme } from 'enums/theme';
 import { LocalStorage } from 'utils/localStorage';
 import { GlobalData } from 'interfaces';
 import { HeaderLinks } from 'common/constants/header';

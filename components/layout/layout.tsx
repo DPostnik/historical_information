@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useApp, selectors } from 'common/store/app.context';
-import { Theme } from 'enums/Theme';
+import { Theme } from 'enums/theme';
 import ContentLayout from './content-layout';
 import Header from './header';
 import Footer from './footer';
