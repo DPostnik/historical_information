@@ -3,6 +3,8 @@ export default function Footer() {
     <>
       <div className="footer__wrapper">footer</div>
       <style jsx>{`
+        @import 'styles/utils/_all.scss';
+
         .footer {
           &__wrapper {
             width: 100%;
@@ -10,7 +12,7 @@ export default function Footer() {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(90deg, #f794ab, #e5f794);
+            color: $text-color;
           }
         }
       `}</style>

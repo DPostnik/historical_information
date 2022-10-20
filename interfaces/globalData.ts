@@ -1,6 +1,6 @@
-import { Link } from './link';
+import { ILink } from './ILink';
 
 export interface GlobalData {
-  headerLinks: Link[];
-  footerLinks: Link[];
+  headerLinks: ILink[];
+  footerLinks: ILink[];
 }

@@ -1,26 +1,19 @@
-import Switcher from 'components/switcher/switcher';
-import { useApp } from 'common/store/app.context';
-import { getTheme } from 'common/store/selectors';
-import { Theme } from '../../enums/Theme';
-import { useCallback } from 'react';
+import { useRouter } from 'next/router';
+import ThemeSwitcher from 'components/switcher/theme-switcher';
+import HeaderContent from './header/headerContent';
+import { selectors, useApp } from 'common/store/app.context';
 
 export default function Header() {
-  const { dispatch } = useApp();
-  const theme = useApp(getTheme);
-
-  const handleSwitchTheme = useCallback(
-    (value: Theme) => {
-      dispatch({ type: 'setTheme', payload: value });
-    },
-    [dispatch]
-  );
+  const links = useApp(selectors.getHeaderLinks);
+  const { pathname } = useRouter();
 
   return (
     <>
       <div className="header__wrapper">
         <h1>logo</h1>
+        <HeaderContent pathname={pathname} links={links} />
         <div>
-          <Switcher theme={theme} handleSwitchTheme={handleSwitchTheme}/>
+          <ThemeSwitcher />
         </div>
       </div>
       <style jsx>{`
@@ -30,17 +23,13 @@ export default function Header() {
           &__wrapper {
             width: 100%;
             height: 5vh;
-            border: 1px solid black;
+            border: 1px solid $border-color;
             border-bottom: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 3rem;
-            background: linear-gradient(90deg, #9df794 0%, #f794e4 100%);
-
-            @include md {
-              border: 1px solid red;
-            }
+            color: $text-color;
           }
         }
       `}</style>

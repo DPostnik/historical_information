@@ -1,2 +1,2 @@
-export * from './link';
+export * from './ILink';
 export * from './globalData';

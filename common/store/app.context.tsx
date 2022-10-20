@@ -3,6 +3,13 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 import { Theme } from 'enums/Theme';
 import { LocalStorage } from 'utils/localStorage';
 import { GlobalData } from 'interfaces';
+import { HeaderLinks } from 'common/constants/header';
+import {
+  getTheme,
+  getGlobalData,
+  getFooterLinks,
+  getHeaderLinks,
+} from './selectors';
 
 export interface AppContext {
   theme: Theme;
@@ -12,7 +19,7 @@ export interface AppContext {
 const initialValue: AppContext = {
   theme: Theme.LIGHT,
   globalData: {
-    headerLinks: [],
+    headerLinks: HeaderLinks,
     footerLinks: [],
   },
 };
@@ -60,4 +67,11 @@ function useApp(selector?: any) {
   return selector ? selector(context) : context;
 }
 
-export { AppProvider, useApp };
+const selectors = {
+  getTheme,
+  getGlobalData,
+  getFooterLinks,
+  getHeaderLinks,
+};
+
+export { AppProvider, useApp, selectors };
