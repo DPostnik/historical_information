@@ -1,3 +1,8 @@
 {
-  "h1": "Home"
+  "h1": "Home",
+  "links": {
+    "home": "Home",
+    "custom": "Additional",
+    "new": "New"
+  }
 }

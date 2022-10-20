@@ -30,6 +30,7 @@ export default function Navigation({
                 className={`navigation__list-item ${
                   pathname === link.href ? 'navigation__list-item-active' : ''
                 }`}
+                onClick={onClose}
               >
                 <LinkComponent link={link}>
                   <span className="navigation__bubble-line">

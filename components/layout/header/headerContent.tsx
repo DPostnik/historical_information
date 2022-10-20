@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Navigation from './navigation';
 import LinkComponent from 'components/link';
+import useLinkTranslation from 'hooks/useLinkTranslation';
 
 type HeaderContentProps = {
   pathname: string;
@@ -16,11 +17,13 @@ export default function HeaderContent({ pathname, links }: HeaderContentProps) {
     setStateToggleMenu((prev) => !prev);
   };
 
+  const mappedLinks = useLinkTranslation(links);
+
   return (
     <>
       <div className="header-content__wrapper">
         <ul className="header-content__items">
-          {links.map((link, index) => (
+          {mappedLinks.map((link, index) => (
             <li
               key={index}
               className={`content-item ${
@@ -47,7 +50,7 @@ export default function HeaderContent({ pathname, links }: HeaderContentProps) {
         <Navigation
           active={stateToggleMenu}
           onClose={toggleMenu}
-          links={links}
+          links={mappedLinks}
           pathname={pathname}
         />
       </div>

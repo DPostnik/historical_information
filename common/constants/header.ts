@@ -8,7 +8,7 @@ export const HeaderLinks: ILink[] = [
   },
   {
     href: '/custom',
-    label: 'next',
+    label: 'custom',
     isExternal: false,
   },
   {
