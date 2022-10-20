@@ -1,18 +1,19 @@
 import { ILink } from 'interfaces';
+import { ROUTES } from './routes';
 
 export const HeaderLinks: ILink[] = [
   {
-    href: '/',
+    href: ROUTES.HOME,
     label: 'home',
     isExternal: false,
   },
   {
-    href: '/custom',
+    href: ROUTES.CUSTOM,
     label: 'custom',
     isExternal: false,
   },
   {
-    href: '/new',
+    href: ROUTES.NEW,
     label: 'new',
     isExternal: false,
   },

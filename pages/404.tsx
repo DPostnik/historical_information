@@ -1,5 +1,9 @@
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 
+import Button from 'components/button/button';
+import { ROUTES } from 'common/constants/routes';
+import { Size } from 'enums/size';
 import withTranslation from 'middlewares/withTranslation';
 
 export default function ErrorPage() {
@@ -8,9 +12,18 @@ export default function ErrorPage() {
   return (
     <>
       <div className="error-page__wrapper">
-        <h1>404</h1>
-        <div className={'error-page__divider'} />
-        <span>{t('pageNotFound')}</span>
+        <div className="error-page__content">
+          <h1>404</h1>
+          <div className={'error-page__divider'} />
+          <span>{t('pageNotFound')}</span>
+        </div>
+        <div className="button__container">
+          <Link href={ROUTES.HOME}>
+            <Button size={Size.MEDIUM}>
+              <a>{t('goToHomePage', { ns: 'common' })}</a>
+            </Button>
+          </Link>
+        </div>
       </div>
       <style jsx>{`
         @import 'styles/utils/_all.scss';
@@ -19,6 +32,14 @@ export default function ErrorPage() {
           &__wrapper {
             width: 100%;
             height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &__content {
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
