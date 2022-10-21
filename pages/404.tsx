@@ -1,10 +1,9 @@
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
 
-import Button from 'components/button/button';
 import { ROUTES } from 'common/constants/routes';
 import { Size } from 'enums/size';
 import withTranslation from 'middlewares/withTranslation';
+import LinkButton from "components/button/link-button";
 
 export default function ErrorPage() {
   const { t } = useTranslation('error');
@@ -18,11 +17,9 @@ export default function ErrorPage() {
           <span>{t('pageNotFound')}</span>
         </div>
         <div className="button__container">
-          <Link href={ROUTES.HOME}>
-            <Button size={Size.MEDIUM}>
-              <a>{t('goToHomePage', { ns: 'common' })}</a>
-            </Button>
-          </Link>
+          <LinkButton href={ROUTES.HOME} size={Size.MEDIUM}>
+            {t('goToHomePage', { ns: 'common' })}
+          </LinkButton>
         </div>
       </div>
       <style jsx>{`
